@@ -7,13 +7,18 @@
 
 int main(void)
 {
-int lwr;
+int lwr = 'a';
 
-for (lwr = 'a'; lwr <= 'z', lwr++)
+while (lwr <= 'z')
 {
-if (lwr != 'e' && lwr != 'q')
+if (lwr == 'e' || lwr == 'q')
 {
-putchar(lwr);
+lwr += 1;
+}
+else
+{
+putchar('lwr');
+lwr += 1;
 }
 }
 putchar('\n');
