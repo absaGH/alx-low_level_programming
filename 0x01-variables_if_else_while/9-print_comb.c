@@ -1,25 +1,25 @@
 #include <stdio.h>
 
 /**
- *main - program that displays all possible combinations of single-digit
- *separated by comma
- *Return: 0
+ * main -  program that prints all possible combinations of single-digit
+ * separated by ,followed by a space
+ * Return: 0
  */
 
 int main(void)
 {
-int n;
-int cma = 44;
-
-for (n = 48; n <= 57; n++)
+int n = 48;
+int com = 44;
+while (n <= 57)
 {
 putchar(n);
 if (n != 57)
 {
-putchar(cma);
+putchar(com);
 putchar(32);
 }
-putchar('\n');
+n += 1;
 }
+putchar('\n');
 return (0);
 }
