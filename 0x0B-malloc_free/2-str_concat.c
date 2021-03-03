@@ -18,9 +18,9 @@ int count;
 
 count = 0;
 if (s1 == NULL)
-s1 = "";
+s1 = " ";
 if (s2 == NULL)
-s2 = "";
+s2 = " ";
 for (j = 0; s1[j] != '\0'; j++)
 ;
 for (k = 0; s2[k] != '\0'; k++)
