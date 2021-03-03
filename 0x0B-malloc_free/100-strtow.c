@@ -25,17 +25,6 @@ num++;
 }
 return (num);
 }
-/**
- * free_everything - frees the memory
- * @string: pointer values being passed for freeing
- * @i: counter
- */
-void free_everything(char **string, int i)
-{
-for (; i > 0;)
-free(string[--i]);
-free(string);
-}
 
 /**
  * strtow - function that splits string into words
@@ -68,11 +57,6 @@ length++;
 str++;
 }
 words[b] = malloc((length + 1) * sizeof(char));
-if (words[b] == 0)
-{
-free_everything(words, b);
-return (NULL);
-}
 while (*found_word != ' ' && *found_word != '\0')
 {
 words[b][c] = *found_word;
