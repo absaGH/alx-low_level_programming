@@ -1,4 +1,3 @@
-
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,7 +19,7 @@ int *temp;
 if (width <= 0 || height <= 0)
 return (NULL);
 grid = (int **)malloc(height * sizeof(int *));
-if (gridi == NULL)
+if (grid == NULL)
 return (NULL);
 for (i = 0; i < height; i++)
 {
