@@ -1,0 +1,1 @@
+This projecty contains more C programming exercisess that make use of the malloc and free functions from the stdlib header file.
