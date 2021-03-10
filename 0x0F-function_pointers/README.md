@@ -1,0 +1,1 @@
+This project demonstrates what function pointers are, how to create and use them.
