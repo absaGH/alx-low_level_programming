@@ -1,66 +1,30 @@
 #include "3-calc.h"
+#include <string.h>
 
 /**
- * op_add - add
- * @a: first operand
- * @b: second operand
- * Return: the result of the operation
+ * get_op_func - select the correct function to perform an operation
+ * @s: the operation to perform
+ *
+ * Return: If s is not one of the defined operators ('+', '-', '*', '/', '%'),
+ * return NULL. Otherwise, return a pointer to the appropriate function.
  */
-int op_add(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
-return (a + b);
-}
+int i = 0;
 
-/**
- * op_sub - subtract
- * @a: first operand
- * @b: second operand
- * Return: the result of the operation
- */
-int op_sub(int a, int b)
+op_t ops[] = {
+{ "+", op_add },
+{ "-", op_sub },
+{ "*", op_mul },
+{ "/", op_div },
+{ "%", op_mod },
+{ NULL, NULL }
+};
+while (s && ops[i].op != NULL)
 {
-return (a - b);
+if (!strcmp(s, ops[i].op))
+return (ops[i].f);
+++i;
 }
-
-/**
- * op_mul - multiply
- * @a: first operand
- * @b: second operand
- * Return: the result of the operation
- */
-int op_mul(int a, int b)
-{
-return (a * b);
-}
-
-/**
- * op_div - divide
- * @a: first operand
- * @b: second operand
- * Return: the result of the operation
- */
-int op_div(int a, int b)
-{
-if (!b)
-{
-puts("Error");
-exit(100);
-}
-return (a / b);
-}
-
-/**
- * op_mod - modulo
- * @a: first operand
- * @b: second operand
- * Return: the result of the operation
- */
-int op_mod(int a, int b)
-{
-if (!b)
-{
-puts("Error");
-exit(100);
-}
-return (a % b);
+return (NULL);
 }
