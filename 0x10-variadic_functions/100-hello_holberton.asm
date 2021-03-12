@@ -2,9 +2,9 @@ section .data
 	text db "Hello, Holberton", 10
 	
 section .text
-	global _main
+	global main
 
-_main:
+main:
 mov rax, 1
 mov rdi, 1
 mov rsi, text
