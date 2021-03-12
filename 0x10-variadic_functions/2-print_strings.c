@@ -19,7 +19,7 @@ if (n > 0)
 va_start(args, n);
 while (i < n)
 {
-string = va_arg(args, char *);
+str = va_arg(args, char *);
 if (str == NULL)
 printf("%s", "(nil)");
 else
