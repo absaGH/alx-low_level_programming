@@ -11,7 +11,7 @@ include < stdlib.h >
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-unsigned int len, olen, i;
+unsigned int nlen, olen, i;
 dog_t *dog;
 
 if (name == NULL || owner == NULL)
