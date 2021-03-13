@@ -2,16 +2,16 @@
 #include "dog.h"
 
 /**
- * new_dog - creates a new dog based on the inputs provided
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
  *
- * Return: pointer to the new dog
+ * Return: pointer to new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-unsigned int nlen, olen, i;
+unsigned int nl, ol, i;
 dog_t *dog;
 
 if (name == NULL || owner == NULL)
@@ -19,29 +19,29 @@ return (NULL);
 dog = malloc(sizeof(dog_t));
 if (dog == NULL)
 return (NULL);
-for (nlen = 0; name[nlen]; len++)
+for (nl = 0; name[nl]; nl++)
 ;
-nlen++;
-dog->name = malloc(nlen *sizeof(char));
+nl++;
+dog->name = malloc(nl *sizeof(char));
 if (dog->name == NULL)
 {
 free(dog);
 return (NULL);
 }
-for (i = 0; i < nlen; i++)
+for (i = 0; i < nl; i++)
 dog->name[i] = name[i];
 dog->age = age;
-for (olen = 0; owner[olen]; olen++)
+for (ol = 0; owner[ol]; ol++)
 ;
-olen++;
-dog->owner = malloc(olen *sizeof(char));
+ol++;
+dog->owner = malloc(ol *sizeof(char));
 if (dog->owner == NULL)
 {
 free(dog->name);
 free(dog);
 return (NULL);
 }
-for (i = 0; i < olen; i++)
+for (i = 0; i < ol; i++)
 dog->owner[i] = owner[i];
 return (dog);
 }
