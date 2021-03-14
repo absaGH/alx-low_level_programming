@@ -15,7 +15,7 @@ int len, index;
 len = 0;
 while (s[len] != '\0')
 len++;
-for (index = 0; index <= l; index++, s++)
+for (index = 0; index <= len; index++, s++)
 {
 if (*s == c)
 return (s);
