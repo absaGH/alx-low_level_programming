@@ -14,7 +14,7 @@ return (0);
 else if (div > num / 2)
 return (1);
 else
-return (isprime(fact + 1, num));
+return (isprime(div + 1, num));
 }
 
 /**
