@@ -1,0 +1,1 @@
+this is a project what static libraries are and how to use them.
