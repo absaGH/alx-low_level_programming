@@ -29,7 +29,7 @@ return (1);
 else if (str[indx1] != str[indx2])
 return (0);
 else
-return (check_palindrome(indx1 + 1, indx2 - 1, str));
+return (test_palindrome(indx1 + 1, indx2 - 1, str));
 }
 
 /**
