@@ -26,7 +26,7 @@ int test_palindrome(int indx1, int indx2, char *str)
 {
 if (indx1 >= indx2)
 return (1);
-else if (p[indx1] != str[indx2])
+else if (str[indx1] != str[indx2])
 return (0);
 else
 return (check_palindrome(indx1 + 1, indx2 - 1, str));
