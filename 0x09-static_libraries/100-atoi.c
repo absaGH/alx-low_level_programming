@@ -1,6 +1,3 @@
-#include "holberton.h"
-#include <stdio.h>
-
 /**
  * _atoi - Converts a character array to an integer
  *

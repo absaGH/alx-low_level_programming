@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * _isdigit -  a function that checks whether c is a digit 0-9
  * @c: input

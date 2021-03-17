@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * char *_strcpy - a function that copies the string pointed to by src
  * @dest: the sting to which the function copy to

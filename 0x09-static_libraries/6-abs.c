@@ -1,4 +1,3 @@
-#include "holberton.h"
 /**
  * _abs - a function that determines the absolute value of an integer
  * @ab: integer input

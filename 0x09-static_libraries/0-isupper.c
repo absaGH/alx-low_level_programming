@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * _isupper - a function that checks whether c is uppercase or not
  * @c: character input

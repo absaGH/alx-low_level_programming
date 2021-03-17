@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * _strspn - Gets the length of a prefix substring.
  * @s: The string to be searched.

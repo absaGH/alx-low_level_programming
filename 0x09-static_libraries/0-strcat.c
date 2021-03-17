@@ -1,5 +1,3 @@
-#include "holberton.h"
-
 /**
  * _strcat - a function that concatenates two strings
  * @dest: the string to store the concatenated strings
