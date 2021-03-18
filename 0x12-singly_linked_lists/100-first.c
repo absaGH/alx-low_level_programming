@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void firsttoexecute(void) __attribute__((constructor));
+void firsttoexecute(void) __attribute__ ((constructor));
 
 /**
- *first - function that executes before main
+ *firsttoexecute - function that executes before main
  *
  *Return: nothing
  */
