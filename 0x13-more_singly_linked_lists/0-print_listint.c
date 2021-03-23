@@ -17,6 +17,5 @@ printf("%d\n", h->n);
 h = h->next;
 count++;
 }
-printf("-> %d elements\n", count);
 return (count);
 }
