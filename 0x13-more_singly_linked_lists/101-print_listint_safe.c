@@ -3,15 +3,14 @@
 #include <stdio.h>
 
 /**
- * _r - reallocates memory for an array of pointers
- * to the nodes in a linked list
- * @list: the old list to append
- * @size: size of the new list (always one more than the old list)
- * @new: new node to add to the list
+ * printed - creates the new list of displayed nodes
+ * @lst: the old list of displayed nodes
+ * @sz: size of the new list (always one more than the old list)
+ * @n: new node to add to the list of displayed nodes
  *
  * Return: pointer to the new list
  */
-const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
+const listint_t **printed(const listint_t **lst, size_t sz, const listint_t *n)
 {
 const listint_t **newlist;
 size_t i;
@@ -19,19 +18,19 @@ size_t i;
 newlist = malloc(size * sizeof(listint_t *));
 if (newlist == NULL)
 {
-free(list);
+free(lst);
 exit(98);
 }
-for (i = 0; i < size - 1; i++)
+for (i = 0; i < sz - 1; i++)
 newlist[i] = list[i];
-newlist[i] = new;
-free(list);
+newlist[i] = n;
+free(lst);
 return (newlist);
 }
 
 /**
- * print_listint_safe - prints a listint_t linked list.
- * @head: pointer to the start of the list
+ * print_listint_safe - diplays a listint_t linked list safely
+ * @head: pointer to the first node of the list
  *
  * Return: the number of nodes in the list
  */
@@ -52,7 +51,7 @@ return (num);
 }
 }
 num++;
-list = _r(list, num, head);
+list = printed(list, num, head);
 printf("[%p] %d\n", (void *)head, head->n);
 head = head->next;
 }
