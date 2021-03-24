@@ -30,6 +30,8 @@ return (0);
 size_t print_listint_safe(const listint_t *head)
 {
 listint_t *temp, **list;
+
+list = NULL;
 size_t count = 0;
 if (head == NULL)
 exit(98);
