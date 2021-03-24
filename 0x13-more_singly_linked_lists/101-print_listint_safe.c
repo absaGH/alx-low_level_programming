@@ -3,22 +3,30 @@
 #include <stdio.h>
 
 /**
- * printed - checks whether a node is printed or not in an array of pointers
- * to the nodes printed out in a linked list
- * @curr: the node to be checked
- * @c: size of the new list (always one more than the old list)
- * @list: pointer to pointer to store printed nodes in the linked list
+ * _r - reallocates memory for an array of pointers
+ * to the nodes in a linked list
+ * @list: the old list to append
+ * @size: size of the new list (always one more than the old list)
+ * @new: new node to add to the list
  *
  * Return: pointer to the new list
  */
-int printed(listint_t *curr, listint_t **list, size_t c)
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 {
-int i;
-for (i = 0; i < c; i++)
-if (list[i] == curr)
-return (1);
-list[i] = curr;
-return (0);
+const listint_t **newlist;
+size_t i;
+
+newlist = malloc(size * sizeof(listint_t *));
+if (newlist == NULL)
+{
+free(list);
+exit(98);
+}
+for (i = 0; i < size - 1; i++)
+newlist[i] = list[i];
+newlist[i] = new;
+free(list);
+return (newlist);
 }
 
 /**
@@ -29,30 +37,25 @@ return (0);
  */
 size_t print_listint_safe(const listint_t *head)
 {
-listint_t *temp, **list;
+size_t i, num = 0;
+const listint_t **list = NULL;
 
-list = NULL;
-size_t count = 0;
-if (head == NULL)
-exit(98);
-else
+while (head != NULL)
 {
-temp = head;
-while (temp)
+for (i = 0; i < num; i++)
 {
-if (printed(temp, list, count))
+if (head == list[i])
 {
-printf("-> [%p] %d\n", (void *)temp, temp->n);
-temp = NULL;
+printf("-> [%p] %d\n", (void *)head, head->n);
+free(list);
+return (num);
 }
-else
-{
-printf("[%p] %d\n", (void *)temp, temp->n);
-temp = temp->next;
-count++;
 }
+num++;
+list = _r(list, num, head);
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 free(list);
-}
-return (count);
+return (num);
 }
