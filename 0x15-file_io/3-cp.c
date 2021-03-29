@@ -100,7 +100,7 @@ file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_perm);
 check99((ssize_t)fd_to, argv[2], fd_from, -1);
 len_char_r = 1024;
-while (lenr == 1024)
+while (len_char_r == 1024)
 {
 len_char_r = read(fd_from, buffer, 1024);
 check98(lenr, argv[1], fd_from, fd_to);
