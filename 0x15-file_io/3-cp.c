@@ -103,7 +103,7 @@ len_char_r = 1024;
 while (len_char_r == 1024)
 {
 len_char_r = read(fd_from, buffer, 1024);
-check98(lenr, argv[1], fd_from, fd_to);
+check98(len_char_r, argv[1], fd_from, fd_to);
 len_char_w = write(fd_to, buffer, len_char_r);
 if (len_char_w != len_char_r)
 len_char_w = -1;
