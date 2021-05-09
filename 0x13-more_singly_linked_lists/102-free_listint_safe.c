@@ -41,7 +41,7 @@ size_t looped_list_len(listint_t *head)
 			return (count);
 		}
 
-		tortoise = tortoise->next;
+		temp = temp->next;
 		temp2 = (temp2->next)->next;
 	}
 
